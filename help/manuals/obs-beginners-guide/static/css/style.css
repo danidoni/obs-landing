@@ -60,6 +60,24 @@ html, body {
     font-size: 16px;
 }
 
+.bypass-block {
+  position: absolute;
+  left: 0;
+  z-index: 9753;
+  overflow: hidden;
+}
+
+.bypass-block > * {
+  position: absolute;
+  /* clip is deprecated but works in IE and Edge. clip-path is
+  newer and more flexible and also less compatible. */
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px,1px,1px,1px);
+  clip-path: rect(1px,1px,1px,1px);
+  overflow: hidden;
+  height: 1px;
+}
+
 #_toolbar-bottom,
 #_fixed-header-wrap #_bubble-toc, .documentation, .page-bottom {
     margin: 0 auto;
@@ -106,7 +124,7 @@ html, body {
 }
 
 #_content {
-    background: #FFF url(../images/dots-gray.png) repeat-x scroll 0px 0px;
+    background: transparent url(../images/dots-gray.png) repeat-x scroll 0px 0px;
     min-height: 139px;
     clear: both;
     min-width: 150px;
